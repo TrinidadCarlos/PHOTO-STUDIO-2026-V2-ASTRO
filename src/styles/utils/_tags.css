@@ -16,7 +16,6 @@ body {
 }
 
 /* ESTO PORQ UELA LIBRERIA AOS DESBODAR EN X EN MOBILE... */
-html,
 body {
     overflow-x: hidden;
     /* Asegura que el ancho siempre sea el de la pantalla */

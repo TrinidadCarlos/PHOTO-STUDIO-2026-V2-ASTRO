@@ -40,108 +40,122 @@
 }
 
 .card-review {
-    background-color: rgba(var(--color-quaternary-rgb), .8);
-    box-shadow: 0 .2rem .2rem rgba(var(--color-senary-rgb), .5);
-    border-radius: 2rem;
-    padding: 2rem;
+    background-color: var(--color-white);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 1rem;
+    padding: 2.5rem;
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
-    gap: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     @media (min-width: 640px) {
-        padding: 2rem;
+        padding: 3rem;
     }
+}
+
+.card-review:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card-quote {
+    color: var(--color-tertiary);
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.card-body {
+    flex-grow: 1;
+    color: var(--color-quinary) !important;
+    margin-bottom: 2rem;
+
+    p {
+        font-family: var(--font-spectral-italic, serif);
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: rgba(var(--color-quinary-rgb), 0.8);
+        font-style: italic;
+
+        @media (min-width: 640px) {
+            font-size: 1.3rem !important;
+        }
+
+        @media (min-width: 860px) {
+            font-size: 1.4rem !important;
+        }
+    }
+}
+
+.card-footer {
+    border-top: 1px solid rgba(var(--color-quinary-rgb), 0.1);
+    padding-top: 1.5rem;
 }
 
 .card-header {
     width: 100%;
-    padding-bottom: 1rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    border-bottom: .1rem solid var(--color-senary);
-
-    @media (min-width: 640px) {
-        justify-content: space-around;
-        flex-direction: row;
-    }
+    justify-content: flex-start;
+    gap: 1.5rem;
+    flex-direction: row;
 
     figure {
-        width: 7rem;
-        height: 7rem;
+        width: 6rem;
+        height: 6rem;
         border-radius: 50%;
         overflow: hidden;
-        border: .1rem solid var(--color-secondary);
-        box-shadow: 0 .2rem .2rem rgba(var(--color-senary-rgb), .5);
+        border: 2px solid var(--color-tertiary);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 
         @media (min-width: 640px) {
-            width: 5.5rem;
+            width: 5rem;
             height: 5rem;
-
         }
-
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 
-
-
-    .card-service-name,
     .card-service-user {
-        text-align: center;
-        font-size: 1.5rem;
+        font-family: var(--font-playfair-bold);
+        font-size: 1.2rem;
         color: var(--color-quinary);
-
-        @media (min-width: 640px) {
-
-            font-size: 1.3rem;
-            text-align: start;
-        }
-
-        @media (min-width: 1024px) {
-            font-size: 1.5rem;
-        }
+        margin-bottom: 0.2rem;
+        text-align: left;
     }
 
     .card-service-name {
-        color: var(--color-senary) !important;
-
-        @media (min-width: 640px) {
-            text-align: end !important;
-            margin-bottom: 1rem;
-        }
-
+        font-family: var(--font-satisfy-regular);
+        font-size: 1.2rem;
+        color: var(--color-tertiary);
+        text-align: left;
+        margin-bottom: 0.5rem;
     }
 
-}
-
-.card-body {
-    padding: 0 1.5rem;
-    color: var(--color-quinary) !important;
-
-    p {
-
-        font-size: 1.6rem;
-
-        @media (min-width: 640px) {
-            font-size: 1.4rem !important;
-        }
-
-        @media (min-width: 860px) {
-            font-size: 1.6rem !important;
-        }
+    .stars {
+        display: flex;
+        gap: 0.2rem;
+        color: #f59e0b; /* Golden star color */
     }
 }
 
 .swiper-pagination-reviews {
-    bottom: 1rem !important;
+    bottom: 0rem !important;
 
     .swiper-pagination-bullet {
-
         width: 1.2rem;
         height: 1.2rem;
+        background-color: var(--color-quinary);
+        opacity: 0.4;
+    }
+    
+    .swiper-pagination-bullet-active {
+        background-color: var(--color-tertiary);
+        opacity: 1;
     }
 }

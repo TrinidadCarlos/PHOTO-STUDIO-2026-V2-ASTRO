@@ -6,94 +6,93 @@ import twitterImg from "@assets/img/generic/twitter.png";
 import instagramImg from "@assets/img/generic/instagram.png";
 import tiktokImg from "@assets/img/generic/tiktok.png";
 import { Image } from "astro:assets";
+const currentYear = new Date().getFullYear();
 ---
 
-<footer>
-    <div class="footer-info">
-        <figure class="footer-logo" data-aos="fade-left">
-            <Image
-                src={logoImg}
-                width={250}
-                height={100}
-                alt="imagen del logitipo en footer"
-                loading="lazy"
-            />
-        </figure>
+<footer class="main-footer">
+    <div class="footer-container">
+        <!-- Logo & About -->
+        <div class="footer-col brand-col" data-aos="fade-up">
+            <figure class="footer-logo">
+                <Image
+                    src={logoImg}
+                    width={220}
+                    height={88}
+                    alt="Trinidad Photo Studio Logo"
+                    loading="lazy"
+                />
+            </figure>
+            <p class="footer-about">
+                Capturamos la esencia de tus momentos más valiosos. Arte, técnica y pasión en cada fotografía para que tus recuerdos vivan para siempre.
+            </p>
+        </div>
 
-        <p class="footer-bann">Visita nuestras redes sociales</p>
+        <!-- Quick Links -->
+        <div class="footer-col links-col" data-aos="fade-up" data-aos-delay="100">
+            <h3>Explorar</h3>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/about">Conócenos</a></li>
+                <li><a href="/services">Servicios</a></li>
+                <li><a href="/gallery">Colecciones</a></li>
+                <li><a href="/reviews">Testimonios</a></li>
+            </ul>
+        </div>
 
-        <ul class="footer-social">
-            <li>
-                <a
-                    href="https://www.facebook.com/tu-usuario"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Ir a nuestra página de Facebook"
-                >
-                    <Image
-                        src={facebookImg}
-                        alt="Facebook"
-                        width={32}
-                        height={32}
-                        loading="lazy"
-                    />
-                </a>
-            </li>
-            <li>
-                <a
-                    href="https://www.instagram.com/tu-usuario"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Ir a nuestra página de Instagram"
-                >
-                    <Image
-                        loading="lazy"
-                        src={instagramImg}
-                        alt="Instagram"
-                        width={32}
-                        height={32}
-                    />
-                </a>
-            </li>
-            <li>
-                <a
-                    href="https://www.twitter.com/tu-usuario"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Ir a nuestro perfil de Twitter/X"
-                >
-                    <Image
-                        loading="lazy"
-                        src={twitterImg}
-                        alt="Twitter"
-                        width={32}
-                        height={32}
-                    />
-                </a>
-            </li>
-            <li>
-                <a
-                    href="https://www.tiktok.com/@tu-usuario"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Ir a nuestro perfil de TikTok"
-                >
-                    <Image
-                        loading="lazy"
-                        src={tiktokImg}
-                        alt="TikTok"
-                        width={32}
-                        height={32}
-                    />
-                </a>
-            </li>
-        </ul>
+        <!-- Contact Info -->
+        <div class="footer-col contact-col" data-aos="fade-up" data-aos-delay="200">
+            <h3>Contacto</h3>
+            <ul>
+                <li>
+                    <span>📍</span>
+                    <p>Av. Principal #123, Ciudad, País</p>
+                </li>
+                <li>
+                    <span>📞</span>
+                    <p>+1 234 567 8900</p>
+                </li>
+                <li>
+                    <span>✉️</span>
+                    <p>hola@trinidadstudio.com</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Social & CTA -->
+        <div class="footer-col social-col" data-aos="fade-up" data-aos-delay="300">
+            <h3>Síguenos</h3>
+            <p>Descubre nuestro trabajo más reciente y el detrás de escenas.</p>
+            <ul class="footer-social">
+                <li>
+                    <a href="https://www.instagram.com/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <Image src={instagramImg} alt="Instagram" width={22} height={22} loading="lazy" />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <Image src={facebookImg} alt="Facebook" width={22} height={22} loading="lazy" />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <Image src={twitterImg} alt="Twitter" width={22} height={22} loading="lazy" />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/@tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <Image src={tiktokImg} alt="TikTok" width={22} height={22} loading="lazy" />
+                    </a>
+                </li>
+            </ul>
+            <a href="/contact-booking" class="footer-btn">Agendar Sesión</a>
+        </div>
     </div>
 
-    <div class="copy">
-        <p class="copy-reserved">
-            &copy; 2024 Trinidad Photo Studio. All rights reserved.
-        </p>
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+        <div class="copy-reserved">
+            <p>&copy; {currentYear} Trinidad Photo Studio. Todos los derechos reservados.</p>
+        </div>
         <nav class="copy-politics">
             <ul>
                 <li><a href="/aviso-legal">Aviso legal</a></li>

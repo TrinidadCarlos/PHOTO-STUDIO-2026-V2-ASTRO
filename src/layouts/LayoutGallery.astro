@@ -6,26 +6,18 @@ import { Image } from "astro:assets";
 const { title, subtitle, imgBackground } = Astro.props;
 ---
 
-<Layout>
-    <main class={`t-100vh t-padding-header main-gallery-layout`}>
-        <figure class={`figure-bg-gallery`}>
-            <Image
-                src={galleryImage}
-                alt=`imagen de fondo ilustrariva de galería de ${title}`
-                loading="lazy"
-            />
-        </figure>
+<Layout title={`Galería - ${title}`} description={subtitle}>
+    <main class="main-gallery-layout">
+        <div class="gallery-header-section" data-aos="fade-down">
+            <div class="gallery-nav-breadcrumb">
+                <a href="/gallery">Colecciones</a> <span class="separator">/</span> <span>{title}</span>
+            </div>
+            <h1 class="gallery-main-title">{title}</h1>
+            <p class="gallery-subtitle">{subtitle}</p>
+        </div>
 
-        <h2 class={`gallery-title`}>Galería de {title}</h2>
-        <div class={`title-gallery-layout`}></div>
-
-        <p class={`nav-gallery-menu`}>
-            <a href="/gallery">Galería</a> &gt; {title}
-        </p>
-        <p class={`subtitle-gallery-layout`}>
-            {subtitle}
-        </p>
-
-        <slot />
+        <div class="gallery-content-wrapper" data-aos="fade-up" data-aos-delay="200">
+            <slot />
+        </div>
     </main>
 </Layout>

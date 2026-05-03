@@ -96,25 +96,104 @@ import { Image } from "astro:assets";
     </div>
   </section>
 
-  <!-- BANNER  -->
-  <section class="banner">
-    <p class="bann-title" data-aos="fade-right">
-      Te agradecemos por estar con nosotros
-    </p>
-
-    <figure class="bann-img">
-      <Image src={ourImage} alt="" data-aos="fade-up-left" loading="lazy" />
-      <figcaption data-aos="fade-up-right">
+  <!-- ABOUT SECTION -->
+  <section class="about-section">
+    <div class="about-container">
+      <div class="about-text" data-aos="fade-up" data-aos-duration="1000">
+        <span class="subtitle">Conócenos</span>
+        <h2 class="title">El arte de capturar emociones</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos dolorum
-          distinctio quasi, est optio autem accusamus perferendis quo nemo, qui
-          suscipit nisi quam, perspiciatis hic error ex! Officia minus
-          quibusdam, mollitia debitis harum, maxime, deserunt magnam consectetur
-          tenetur fugit nemo adipisci inventore? Corrupti minima suscipit et
-          voluptas deserunt saepe rerum!
+          En nuestro estudio, no solo tomamos fotografías; inmortalizamos
+          historias. Con años de experiencia en el mundo visual, nuestro enfoque
+          combina técnica, pasión y una sensibilidad única para reflejar tu
+          verdadera esencia en cada toma.
         </p>
-      </figcaption>
-    </figure>
+        <p>
+          Desde la luz perfecta hasta el encuadre más sutil, cuidamos cada
+          detalle para que tus recuerdos perduren con la máxima calidad y
+          elegancia.
+        </p>
+        <a href="/about" class="btn-primary">Descubre más</a>
+      </div>
+      <figure
+        class="about-image"
+        data-aos="fade-up"
+        data-aos-delay="200"
+        data-aos-duration="1000"
+      >
+        <div class="image-wrapper">
+          <Image src={ourImage} alt="Fotógrafo trabajando" loading="lazy" />
+          <!-- <div class="experience-badge">
+            <span class="years">+10</span>
+            <span class="text">Años de <br/>Experiencia</span>
+          </div> -->
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- SERVICES OVERVIEW SECTION -->
+  <section class="services-overview">
+    <div class="services-header" data-aos="fade-up">
+      <span class="subtitle">Nuestros Servicios</span>
+      <h2 class="title">Especialidades Fotográficas</h2>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <figure class="card-image">
+          <Image src={photoOne} alt="Fotografía de Bodas" loading="lazy" />
+        </figure>
+        <div class="card-content">
+          <h3>Bodas</h3>
+          <p>
+            Cobertura completa para el día más importante de tu vida, cuidando
+            cada detalle.
+          </p>
+          <span class="card-link">Ver más &rarr;</span>
+        </div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <figure class="card-image">
+          <Image src={photoTwo} alt="Fotografía de Estudio" loading="lazy" />
+        </figure>
+        <div class="card-content">
+          <h3>Estudio</h3>
+          <p>
+            Retratos profesionales, moda y familia con iluminación y fondos
+            perfectos.
+          </p>
+          <span class="card-link">Ver más &rarr;</span>
+        </div>
+      </div>
+
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <figure class="card-image">
+          <Image src={photoThree} alt="Fotografía en Exterior" loading="lazy" />
+        </figure>
+        <div class="card-content">
+          <h3>Exterior</h3>
+          <p>
+            Aprovechamos la luz natural en locaciones espectaculares para tus
+            sesiones.
+          </p>
+          <span class="card-link">Ver más &rarr;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="cta-content" data-aos="zoom-in">
+      <h2>¿Listo para crear recuerdos inolvidables?</h2>
+      <p>
+        Reserva tu sesión fotográfica hoy mismo y déjanos capturar tu mejor
+        versión.
+      </p>
+      <a href="/contact-booking" class="btn-secondary">Agendar Sesión</a>
+    </div>
   </section>
 </Layout>
 

@@ -25,40 +25,55 @@ const images = {
     "maternity-one": maternityImage,
 };
 const galleryRoutes = routes.filter((router) => router.basePath == "/gallery");
+
+const descriptions = {
+    "Bodas": "Momentos eternos capturados en tu gran día.",
+    "Eventos religiosos": "La fe y la espiritualidad en cada imagen.",
+    "Familia": "Tus seres queridos, creando recuerdos invaluables.",
+    "Negocio": "Fotografía corporativa que eleva tu marca profesional.",
+    "Eventos": "Fiestas, XV años y celebraciones inolvidables.",
+    "Maternidad": "La belleza y la magia de la dulce espera.",
+    "Parejas": "Historias de amor contadas a través de nuestro lente.",
+    "Mascotas": "La alegría y lealtad de tus mejores amigos.",
+};
 ---
 
 <Layout>
     <main class="t-100vh t-padding-header main-gallery-page">
-        <h1 class="t-page-titles gallery-title-page">GALERÍA</h1>
+        <div class="gallery-header-wrapper" data-aos="fade-down">
+            <h1 class="t-page-titles gallery-title-page">COLECCIONES</h1>
+            <p class="gallery-intro">Explora nuestros portafolios y sumérgete en las historias que hemos tenido el honor de documentar. Selecciona un álbum para abrir su galería.</p>
+        </div>
 
         <section class="gallery-container">
             {
                 galleryRoutes.map((routes) =>
                     routes.routes.map(
-                        (route) =>
+                        (route, idx) =>
                             route.path !== "" && (
-                                <article class="gallery-card">
+                                <a href={`${routes.basePath}${route.path}`} class="gallery-album-card" data-aos="fade-up" data-aos-delay={idx * 100}>
                                     <figure>
                                         <Image
                                             src={
                                                 route?.imgName
-                                                    ? images[
-                                                          route.imgName as keyof typeof images
-                                                      ]
+                                                    ? images[route.imgName as keyof typeof images]
                                                     : emptyImage
                                             }
-                                            alt={`Sesión fotográfica de ${route.name}`}
+                                            alt={`Álbum fotográfico de ${route.name}`}
                                             loading="lazy"
                                         />
                                     </figure>
-                                    <h3>
-                                        <a
-                                            href={`${routes.basePath}${route.path}`}
-                                        >
-                                            {route.name}
-                                        </a>
-                                    </h3>
-                                </article>
+                                    <div class="album-info">
+                                        <h3>{route.name}</h3>
+                                        <p class="album-desc">{descriptions[route.name as keyof typeof descriptions] || "Descubre esta colección de fotografías."}</p>
+                                        <span class="album-link-btn">
+                                            Abrir Álbum
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                                <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </a>
                             ),
                     ),
                 )

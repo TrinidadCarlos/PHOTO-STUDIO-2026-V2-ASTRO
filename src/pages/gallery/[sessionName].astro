@@ -59,8 +59,49 @@ let subtitle = "";
 
 title = titlesLayout[sessionName as keyof typeof titlesLayout].title;
 subtitle = titlesLayout[sessionName as keyof typeof titlesLayout].subtitle;
+
+const values = ["one", "two", "three", "four", "five"];
+const images = values.map((val) => `/gallery/webp/${sessionName}-${val}.webp`);
 ---
 
 <LayoutGallery title={title} subtitle={subtitle}>
-    <GalleryComponent sessionName={sessionName} client:load />
+    {/* <GalleryComponent sessionName={sessionName} client:load /> */}
+    
+    <section class="masonry-gallery">
+        {images.map((img, index) => (
+            <a 
+                href={img}
+                class="glightbox masonry-item" 
+                data-aos="fade-up" 
+                data-aos-delay={index * 100}
+                data-gallery={`gallery-${sessionName}`}
+                data-title={`${title} - Toma ${index + 1}`}
+                data-description={`Capturando momentos inolvidables en nuestra sesión de ${title}.`}
+            >
+                <img src={img} alt={`Fotografía de ${title}`} loading="lazy" />
+                <div class="masonry-overlay">
+                    <span class="view-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                        </svg>
+                    </span>
+                </div>
+            </a>
+        ))}
+    </section>
 </LayoutGallery>
+
+<script>
+    import GLightbox from 'glightbox';
+    import 'glightbox/dist/css/glightbox.min.css';
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const lightbox = GLightbox({
+            selector: '.glightbox',
+            touchNavigation: true,
+            loop: true,
+            zoomable: true,
+            descPosition: 'bottom'
+        });
+    });
+</script>
