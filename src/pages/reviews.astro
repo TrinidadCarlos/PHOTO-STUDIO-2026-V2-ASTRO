@@ -8,13 +8,20 @@ import photoFace from "@assets/img/generic/face.png";
 ---
 
 <Layout>
-    <main class={`t-100vh t-padding-header main-reviews-page`}>
-        <h1 class={`t-page-titles reviews-title-page`}>COMENTARIOS</h1>
-        <h4 class={`service-subtitle`}>
-            Algunos de los comentarios de nuestros clientes
-        </h4>
+    <main class="main-reviews-page">
+        <!-- HERO SECTION -->
+        <section class="page-hero t-padding-header" data-aos="fade-down">
+            <div class="page-hero-content">
+                <span class="page-subtitle">Testimonios</span>
+                <h1 class="t-page-titles">COMENTARIOS</h1>
+                <p>
+                    Algunos de los comentarios de nuestros clientes
+                </p>
+            </div>
+        </section>
 
-        <section class="review-container">
+        <!-- REVIEWS OVERLAP -->
+        <section class="page-overlap-content review-container" data-aos="fade-up" data-aos-delay="200">
             <div class="swiper mySwiper-reviews">
                 <div class="swiper-wrapper swiper-wrapper-reviews">
                     {

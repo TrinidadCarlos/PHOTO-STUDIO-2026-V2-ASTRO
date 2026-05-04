@@ -39,13 +39,20 @@ const descriptions = {
 ---
 
 <Layout>
-    <main class="t-100vh t-padding-header main-gallery-page">
-        <div class="gallery-header-wrapper" data-aos="fade-down">
-            <h1 class="t-page-titles gallery-title-page">COLECCIONES</h1>
-            <p class="gallery-intro">Explora nuestros portafolios y sumérgete en las historias que hemos tenido el honor de documentar. Selecciona un álbum para abrir su galería.</p>
-        </div>
+    <main class="main-gallery-page">
+        <!-- HERO SECTION -->
+        <section class="page-hero t-padding-header" data-aos="fade-down">
+            <div class="page-hero-content">
+                <span class="page-subtitle">Nuestro Trabajo</span>
+                <h1 class="t-page-titles">COLECCIONES</h1>
+                <p class="gallery-intro">
+                    Explora nuestros portafolios y sumérgete en las historias que hemos tenido el honor de documentar. Selecciona un álbum para abrir su galería.
+                </p>
+            </div>
+        </section>
 
-        <section class="gallery-container">
+        <!-- GALLERY GRID OVERLAP -->
+        <section class="page-overlap-content gallery-container" data-aos="fade-up" data-aos-delay="200">
             {
                 galleryRoutes.map((routes) =>
                     routes.routes.map(

@@ -1,35 +1,58 @@
 .main-gallery-page {
-    background: linear-gradient(rgba(var(--color-secondary-rgb), 0.95), rgba(var(--color-quinary-rgb), 0.95)),
-        url('/img/bg-gallery.jpg');
+    background-color: var(--color-primary);
+    min-height: 100vh;
+}
+
+/* HERO SECTION */
+.page-hero {
+    background: linear-gradient(rgba(var(--color-quinary-rgb), .85), rgba(var(--color-quinary-rgb), .95)), url('/img/bg-gallery.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: 6rem;
-}
-
-.gallery-header-wrapper {
+    color: var(--color-white);
     text-align: center;
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto 4rem auto;
-    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.gallery-title-page {
+.page-hero-content {
+    max-width: 800px;
+    width: 90%;
+    margin-top: 4rem;
+}
+
+.page-subtitle {
+    font-family: var(--font-playfair-medium);
+    color: var(--color-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.page-hero .t-page-titles {
     color: var(--color-primary);
-    text-shadow: .2rem 0 0 var(--color-quinary);
-    border-bottom: .2rem solid var(--color-tertiary);
-    display: inline-block;
+    font-size: 4rem;
     margin-bottom: 1.5rem;
 }
 
 .gallery-intro {
     font-family: var(--font-playfair-regular);
-    font-size: 1.25rem;
-    color: rgba(255,255,255,0.9);
+    font-size: 1.6rem;
+    color: rgba(var(--color-primary-rgb), 0.9);
     line-height: 1.6;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* OVERLAP CONTENT */
+.page-overlap-content {
+    position: relative;
+    z-index: 10;
+    margin-top: -4rem !important; /* Forces overlap */
 }
 
 /* Contenedor de las cards */

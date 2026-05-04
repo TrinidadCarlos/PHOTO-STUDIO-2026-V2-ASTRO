@@ -1,29 +1,70 @@
 .main-reviews-page {
+    background-color: var(--color-primary);
+    min-height: 100vh;
+}
 
-    background: linear-gradient(rgba(var(--color-secondary-rgb), 0.9), rgba(var(--color-quaternary-rgb), 0.7)),
-        url('/img/bg-reviews.webp');
+/* HERO SECTION */
+.page-hero {
+    background: linear-gradient(rgba(var(--color-quinary-rgb), .85), rgba(var(--color-quinary-rgb), .95)), url('/img/bg-reviews.webp');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding-bottom: 6rem;
+    color: var(--color-white);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-hero-content {
+    max-width: 800px;
+    width: 90%;
+    margin-top: 4rem;
+}
+
+.page-subtitle {
+    font-family: var(--font-playfair-medium);
+    color: var(--color-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.page-hero .t-page-titles {
+    color: var(--color-primary);
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.page-hero p {
+    font-family: var(--font-playfair-regular);
+    font-size: 1.6rem;
+    color: rgba(var(--color-primary-rgb), 0.9);
+    line-height: 1.6;
+}
+
+/* OVERLAP CONTENT */
+.page-overlap-content {
+    position: relative;
+    z-index: 10;
+    margin-top: -4rem !important; /* Forces overlap */
 }
 
 .review-container {
     width: 90%;
     min-height: 50vh;
-    margin: 6rem auto 3rem auto;
+    margin: -4rem auto 3rem auto;
     max-width: 115rem;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-}
-
-.reviews-title-page {
-    color: var(--color-quinary);
-    text-shadow: .1rem .1rem 0 var(--color-primary);
-    border-bottom: .2rem solid var(--color-primary);
 }
 
 .swiper-wrapper-reviews {

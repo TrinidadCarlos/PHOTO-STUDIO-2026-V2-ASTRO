@@ -29,13 +29,20 @@ const images = {
 ---
 
 <Layout>
-    <main class={`t-100vh t-padding-header main-service-page`}>
-        <h1 class={`t-page-titles service-title-page`}>SESIONES</h1>
-        <h4 class={`service-subtitle`}>
-            Nuestros servicios incluyen: Fotografía, video y tomas con dron
-        </h4>
+    <main class="main-service-page">
+        <!-- HERO SECTION -->
+        <section class="page-hero t-padding-header" data-aos="fade-down">
+            <div class="page-hero-content">
+                <span class="page-subtitle">Portafolio Profesional</span>
+                <h2 class="t-page-titles">SESIONES</h2>
+                <p>
+                    Nuestros servicios incluyen: Fotografía, video y tomas con dron
+                </p>
+            </div>
+        </section>
 
-        <section class="services-gallery-grid">
+        <!-- SERVICES GRID OVERLAP -->
+        <section class="page-overlap-content services-gallery-grid" data-aos="fade-up" data-aos-delay="200">
             {
                 serviceRoutes.map((routes) =>
                     routes.routes.map(
@@ -44,8 +51,6 @@ const images = {
                                 <a
                                     href={`${routes.basePath}${route.path}`}
                                     class={`service-bento-card bento-card-${index}`}
-                                    data-aos="fade-up"
-                                    data-aos-delay={(index % 4) * 100}
                                 >
                                     <figure>
                                         <Image
