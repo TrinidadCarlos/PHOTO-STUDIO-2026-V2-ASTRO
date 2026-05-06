@@ -99,9 +99,9 @@ import { Image } from "astro:assets";
   <!-- ABOUT SECTION -->
   <section class="about-section">
     <div class="about-container">
-      <div class="about-text" data-aos="fade-up" data-aos-duration="1000">
-        <span class="subtitle">Conócenos</span>
-        <h2 class="title">El arte de capturar emociones</h2>
+      <div class="about-text-home" data-aos="fade-up" data-aos-duration="1000">
+        <span class="subtitle-about-home">Conócenos</span>
+        <h2 class="title-about-home">El arte de capturar emociones</h2>
         <p>
           En nuestro estudio, no solo tomamos fotografías; inmortalizamos
           historias. Con años de experiencia en el mundo visual, nuestro enfoque
@@ -113,7 +113,7 @@ import { Image } from "astro:assets";
           detalle para que tus recuerdos perduren con la máxima calidad y
           elegancia.
         </p>
-        <a href="/about" class="btn-primary">Descubre más</a>
+        <a href="/about" class="btn-more-home">Descubre más</a>
       </div>
       <figure
         class="about-image"
@@ -135,8 +135,8 @@ import { Image } from "astro:assets";
   <!-- SERVICES OVERVIEW SECTION -->
   <section class="services-overview">
     <div class="services-header" data-aos="fade-up">
-      <span class="subtitle">Nuestros Servicios</span>
-      <h2 class="title">Especialidades Fotográficas</h2>
+      <span class="subtitle-about-home">Nuestros Servicios</span>
+      <h2 class="title-about-home">Especialidades Fotográficas</h2>
     </div>
 
     <div class="services-grid">
@@ -150,7 +150,9 @@ import { Image } from "astro:assets";
             Cobertura completa para el día más importante de tu vida, cuidando
             cada detalle.
           </p>
-          <span class="card-link">Ver más &rarr;</span>
+          <span class="card-link"
+            ><a href="/services/weddings">Ver más &rarr;</a></span
+          >
         </div>
       </div>
 
@@ -164,7 +166,9 @@ import { Image } from "astro:assets";
             Retratos profesionales, moda y familia con iluminación y fondos
             perfectos.
           </p>
-          <span class="card-link">Ver más &rarr;</span>
+          <span class="card-link"
+            ><a href="/services/studio">Ver más &rarr;</a></span
+          >
         </div>
       </div>
 
@@ -178,7 +182,9 @@ import { Image } from "astro:assets";
             Aprovechamos la luz natural en locaciones espectaculares para tus
             sesiones.
           </p>
-          <span class="card-link">Ver más &rarr;</span>
+          <span class="card-link"
+            ><a href="/services/outdoors">Ver más &rarr;</a></span
+          >
         </div>
       </div>
     </div>
@@ -192,7 +198,7 @@ import { Image } from "astro:assets";
         Reserva tu sesión fotográfica hoy mismo y déjanos capturar tu mejor
         versión.
       </p>
-      <a href="/contact-booking" class="btn-secondary">Agendar Sesión</a>
+      <a href="/contact-booking" class="btn-schedule-home">Agendar Sesión</a>
     </div>
   </section>
 </Layout>

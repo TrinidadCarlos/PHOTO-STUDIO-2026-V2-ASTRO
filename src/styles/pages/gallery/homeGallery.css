@@ -52,7 +52,9 @@
 .page-overlap-content {
     position: relative;
     z-index: 10;
-    margin-top: -4rem !important; /* Forces overlap */
+    padding-bottom: 10rem !important;
+    margin-top: -4rem !important;
+    /* Forces overlap */
 }
 
 /* Contenedor de las cards */
@@ -71,7 +73,7 @@
     border-radius: 4px 10px 10px 4px;
     overflow: hidden;
     background: var(--color-white);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
     transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     cursor: pointer;
     text-decoration: none;
@@ -87,7 +89,7 @@
     left: 0;
     width: 25px;
     height: 100%;
-    background: linear-gradient(to right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.05) 50%, transparent 100%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0.05) 50%, transparent 100%);
     z-index: 10;
     pointer-events: none;
     border-left: 4px solid var(--color-tertiary);
@@ -179,5 +181,5 @@
 /* Hover Elevation */
 .gallery-album-card:hover {
     transform: translateY(-12px);
-    box-shadow: 0 25px 45px rgba(0,0,0,0.4);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
 }

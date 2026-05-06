@@ -12,6 +12,8 @@ import couplesImage from "@assets/img/services/couples-one.jpg";
 import religiousImage from "@assets/img/services/religious-one.jpg";
 import weddingImage from "@assets/img/services/wedding-one.jpg";
 import emptyImage from "@assets/img/generic/services-menu.jpg";
+import studioImage from "@assets/img/services/studio-one.webp";
+import outdoorsImage from "@assets/img/services/outdoors-four.webp";
 import { Image } from "astro:assets";
 
 const images = {
@@ -23,18 +25,22 @@ const images = {
     "religious-one": religiousImage,
     "wedding-one": weddingImage,
     "maternity-one": maternityImage,
+    "studio-one": studioImage,
+    "outdoors-four": outdoorsImage,
 };
 const galleryRoutes = routes.filter((router) => router.basePath == "/gallery");
 
 const descriptions = {
-    "Bodas": "Momentos eternos capturados en tu gran día.",
+    Bodas: "Momentos eternos capturados en tu gran día.",
     "Eventos religiosos": "La fe y la espiritualidad en cada imagen.",
-    "Familia": "Tus seres queridos, creando recuerdos invaluables.",
-    "Negocio": "Fotografía corporativa que eleva tu marca profesional.",
-    "Eventos": "Fiestas, XV años y celebraciones inolvidables.",
-    "Maternidad": "La belleza y la magia de la dulce espera.",
-    "Parejas": "Historias de amor contadas a través de nuestro lente.",
-    "Mascotas": "La alegría y lealtad de tus mejores amigos.",
+    Familia: "Tus seres queridos, creando recuerdos invaluables.",
+    Negocio: "Fotografía corporativa que eleva tu marca profesional.",
+    Eventos: "Fiestas, XV años y celebraciones inolvidables.",
+    Maternidad: "La belleza y la magia de la dulce espera.",
+    Parejas: "Historias de amor contadas a través de nuestro lente.",
+    Mascotas: "La alegría y lealtad de tus mejores amigos.",
+    Estudio: "Fotografía de estudio para capturar momentos únicos.",
+    Exteriores: "Fotografía de exteriores para capturar momentos únicos.",
 };
 ---
 
@@ -46,24 +52,38 @@ const descriptions = {
                 <span class="page-subtitle">Nuestro Trabajo</span>
                 <h1 class="t-page-titles">COLECCIONES</h1>
                 <p class="gallery-intro">
-                    Explora nuestros portafolios y sumérgete en las historias que hemos tenido el honor de documentar. Selecciona un álbum para abrir su galería.
+                    Explora nuestros portafolios y sumérgete en las historias
+                    que hemos tenido el honor de documentar. Selecciona un álbum
+                    para abrir su galería.
                 </p>
             </div>
         </section>
 
         <!-- GALLERY GRID OVERLAP -->
-        <section class="page-overlap-content gallery-container" data-aos="fade-up" data-aos-delay="200">
+        <section
+            class="page-overlap-content gallery-container"
+            data-aos="fade-up"
+            data-aos-delay="150"
+        >
             {
                 galleryRoutes.map((routes) =>
                     routes.routes.map(
                         (route, idx) =>
-                            route.path !== "" && (
-                                <a href={`${routes.basePath}${route.path}`} class="gallery-album-card" data-aos="fade-up" data-aos-delay={idx * 100}>
+                            route.path !== "" &&
+                            route.showGallery && (
+                                <a
+                                    href={`${routes.basePath}${route.path}`}
+                                    class="gallery-album-card"
+                                    data-aos="fade-up"
+                                    data-aos-delay={150}
+                                >
                                     <figure>
                                         <Image
                                             src={
                                                 route?.imgName
-                                                    ? images[route.imgName as keyof typeof images]
+                                                    ? images[
+                                                          route.imgName as keyof typeof images
+                                                      ]
                                                     : emptyImage
                                             }
                                             alt={`Álbum fotográfico de ${route.name}`}
@@ -72,11 +92,26 @@ const descriptions = {
                                     </figure>
                                     <div class="album-info">
                                         <h3>{route.name}</h3>
-                                        <p class="album-desc">{descriptions[route.name as keyof typeof descriptions] || "Descubre esta colección de fotografías."}</p>
+                                        <p class="album-desc">
+                                            {descriptions[
+                                                route.name as keyof typeof descriptions
+                                            ] ||
+                                                "Descubre esta colección de fotografías."}
+                                        </p>
                                         <span class="album-link-btn">
                                             Abrir Álbum
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                                <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                            >
+                                                <path
+                                                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
                                             </svg>
                                         </span>
                                     </div>

@@ -34,21 +34,6 @@
     transform: scale(1);
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* width: 100%;
-    height: 100%; */
-    background: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.4) 0%,
-            rgba(0, 0, 0, 0.2) 40%,
-            rgba(0, 0, 0, 0.6) 100%);
-
-    z-index: 2;
-}
 
 .hero-text {
     position: absolute;
@@ -56,14 +41,19 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90%;
+    /* width: 90%; */
+    width: fit-content;
+    padding: 1rem 3rem;
     max-width: 800px;
     text-align: center;
-    background-color: rgba(var(--color-quinary-rgb), 0.7);
+    background-color: rgba(var(--color-quinary-rgb), 0.9);
+    border-radius: .5rem;
+
     color: var(--color-primary);
     opacity: 0;
     transition: opacity 1s ease 0.5s, transform 1s ease 0.5s;
     transform: translate(-50%, -45%);
+
 }
 
 .swiper-slide-active .hero-text {
@@ -84,7 +74,7 @@
 
 .hero-text h2 {
     font-family: var(--font-playfair-boldItalic);
-    font-size: 4.5rem;
+    font-size: clamp(4.5rem, 6vw, 8rem) !important;
     margin-bottom: 1.5rem;
     color: var(--color-primary);
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
@@ -93,9 +83,9 @@
 
 .hero-text p {
     font-family: var(--font-satisfy-regular);
-    font-size: 2rem;
+    font-size: clamp(2.2rem, 2.8vw, 3rem) !important;
     margin-bottom: 2.5rem;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 5px rgba(var(--color-quinary-rgb), 0.9);
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -223,34 +213,29 @@
 }
 
 /* --- GENERAL TYPOGRAPHY & BUTTONS FOR HOME --- */
-.subtitle {
+.subtitle-about-home {
     display: block;
     font-family: var(--font-satisfy-regular);
     color: var(--color-tertiary);
-    font-size: 2rem;
+    font-size: clamp(2.3rem, 2vw, 3rem);
     margin-bottom: 0.5rem;
 }
 
-.title {
+.title-about-home {
     font-family: var(--font-playfair-bold);
     color: var(--color-quinary);
-    font-size: 2.5rem;
+    font-size: clamp(2.3rem, 2.5vw, 3.5rem);
     margin-bottom: 1.5rem;
     line-height: 1.2;
 }
 
-@media (min-width: 768px) {
-    .title {
-        font-size: 3.5rem;
-    }
-}
 
-.btn-primary,
-.btn-secondary {
+.btn-more-home,
+.btn-schedule-home {
     display: inline-block;
     padding: 1rem 2.5rem;
     font-family: var(--font-playfair-medium);
-    font-size: 1rem;
+    font-size: clamp(1.2rem, 2vw, 1.3rem);
     text-transform: uppercase;
     letter-spacing: 2px;
     border-radius: 2px;
@@ -260,24 +245,24 @@
     margin-top: 1rem;
 }
 
-.btn-primary {
+.btn-more-home {
     background-color: var(--color-quinary);
     color: var(--color-primary);
     border: 1px solid var(--color-quinary);
 }
 
-.btn-primary:hover {
+.btn-more-home:hover {
     background-color: transparent;
     color: var(--color-quinary);
 }
 
-.btn-secondary {
+.btn-schedule-home {
     background-color: var(--color-tertiary);
     color: var(--color-white);
     border: 1px solid var(--color-tertiary);
 }
 
-.btn-secondary:hover {
+.btn-schedule-home:hover {
     background-color: transparent;
     color: var(--color-tertiary);
 }
@@ -297,8 +282,8 @@
     align-items: center;
 }
 
-.about-text p {
-    font-size: 1.1rem;
+.about-text-home p {
+    font-size: clamp(1.2rem, 1.2vw, 1.5rem);
     line-height: 1.8;
     margin-bottom: 1.5rem;
     color: rgba(var(--color-quinary-rgb), 0.8);
@@ -389,13 +374,14 @@
     overflow: hidden;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(var(--color-quinary-rgb), 0.05);
+    border-radius: 1.3rem
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .card-image {
@@ -438,7 +424,7 @@
     color: var(--color-tertiary);
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     transition: color 0.3s ease;
 }
 
@@ -498,13 +484,13 @@
 
 .cta-content h2 {
     font-family: var(--font-playfair-boldItalic);
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 1.5rem;
     color: var(--color-tertiary);
 }
 
 .cta-content p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 2.5rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.9);

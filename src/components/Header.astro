@@ -76,24 +76,28 @@ import logoImg from "@assets/img/generic/logo-white.png";
                         ) : section.type === "dropdown" ? (
                             <li class="">
                                 <p class="drop-title" data-droptrigger={idx}>
-                                    <a href={section.basePath}>
-                                        {section.section}
-                                    </a>
+                                    {/* <a href={section.basePath}> */}
+                                    {section.section}
+                                    {/*   el nombre que aparece en el menu Header  NOTA: En el caso de boxlist no tiene enlace en el nombre de la seccion*/}
+                                    {/* </a> */}
                                 </p>
                                 <ul
                                     class={`drop-content hidden-drop ${section.containerClass}`}
                                     data-dropcontent={idx}
                                 >
-                                    {section.routes.map((route) => (
-                                        <li class={`drop-item-li`}>
-                                            <a
-                                                class=" link-drop"
-                                                href={`${section.basePath}${route.path}`}
-                                            >
-                                                {route.name}
-                                            </a>
-                                        </li>
-                                    ))}
+                                    {section.routes.map(
+                                        (route) =>
+                                            route.show && (
+                                                <li class={`drop-item-li`}>
+                                                    <a
+                                                        class=" link-drop"
+                                                        href={`${section.basePath}${route.path}`}
+                                                    >
+                                                        {route.name}
+                                                    </a>
+                                                </li>
+                                            ),
+                                    )}
                                     <li>
                                         <a
                                             class={`see-more-btn`}
@@ -146,12 +150,13 @@ import logoImg from "@assets/img/generic/logo-white.png";
                         ) : section.type === "boxList" ? (
                             <li class="">
                                 <p class=" drop-title" data-droptrigger={idx}>
-                                    <a
+                                    {/* <a
                                         class=" link-drop"
                                         href={`${section.basePath}`}
-                                    >
-                                        {section.section}
-                                    </a>
+                                    > */}
+                                    {section.section}{" "}
+                                    {/*   el nombre que aparece en el menu Header  NOTA: En el caso de boxlist no tiene enlace en el nombre de la seccion*/}
+                                    {/* </a> */}
                                 </p>
                                 <div
                                     class={`boxlist-content hidden-drop ${section.containerClass}`}

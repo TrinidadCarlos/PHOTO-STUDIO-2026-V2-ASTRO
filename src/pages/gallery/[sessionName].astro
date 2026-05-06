@@ -1,8 +1,8 @@
 ---
 import LayoutGallery from "@layouts/LayoutGallery.astro";
-import GalleryComponent, {
-    type GalleryI,
-} from "@components/GalleryComponent.tsx";
+// import GalleryComponent, {
+//     type GalleryI,
+// } from "@components/GalleryComponent.tsx";
 
 export function getStaticPaths() {
     return [
@@ -14,6 +14,8 @@ export function getStaticPaths() {
         { params: { sessionName: "maternity" } },
         { params: { sessionName: "couples" } },
         { params: { sessionName: "business" } },
+        { params: { sessionName: "studio" } },
+        { params: { sessionName: "outdoors" } },
     ];
 }
 
@@ -50,6 +52,14 @@ const titlesLayout = {
         title: "Mascotas",
         subtitle: "Amor que no necesita palabras",
     },
+    studio: {
+        title: "Estudio",
+        subtitle: "Luz, forma y personalidad",
+    },
+    outdoors: {
+        title: "Exteriores",
+        subtitle: "Naturaleza, aventura y libertad",
+    },
 };
 
 const { sessionName } = Astro.params;
@@ -85,7 +95,7 @@ const images = values.map((val) => `/gallery/webp/${sessionName}-${val}.webp`);
                     href={img}
                     class="glightbox masonry-item"
                     data-aos="fade-up"
-                    data-aos-delay={index * 100}
+                    data-aos-delay={200}
                     data-gallery={`gallery-${sessionName}`}
                     data-title={`${title} - Toma ${index + 1}`}
                     data-description={`Capturando momentos inolvidables en nuestra sesión de ${title}.`}

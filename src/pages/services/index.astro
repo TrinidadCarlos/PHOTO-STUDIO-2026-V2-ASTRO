@@ -13,6 +13,8 @@ import couplesImage from "@assets/img/services/couples-one.jpg";
 import religiousImage from "@assets/img/services/religious-one.jpg";
 import weddingImage from "@assets/img/services/wedding-one.jpg";
 import emptyImage from "@assets/img/generic/services-menu.jpg";
+import studioImage from "@assets/img/generic/studio-one.webp";
+import outdoorsImage from "@assets/img/generic/outdoors-four.webp";
 
 const serviceRoutes = routes.filter((router) => router.basePath == "/services");
 
@@ -25,6 +27,8 @@ const images = {
     "religious-one": religiousImage,
     "wedding-one": weddingImage,
     "maternity-one": maternityImage,
+    "studio-one": studioImage,
+    "outdoors-four": outdoorsImage,
 };
 ---
 
@@ -36,13 +40,18 @@ const images = {
                 <span class="page-subtitle">Portafolio Profesional</span>
                 <h2 class="t-page-titles">SESIONES</h2>
                 <p>
-                    Nuestros servicios incluyen: Fotografía, video y tomas con dron
+                    Nuestros servicios incluyen: Fotografía, video y tomas con
+                    dron
                 </p>
             </div>
         </section>
 
         <!-- SERVICES GRID OVERLAP -->
-        <section class="page-overlap-content services-gallery-grid" data-aos="fade-up" data-aos-delay="200">
+        <section
+            class="page-overlap-content services-gallery-grid"
+            data-aos="fade-up"
+            data-aos-delay="200"
+        >
             {
                 serviceRoutes.map((routes) =>
                     routes.routes.map(
@@ -67,11 +76,13 @@ const images = {
                                     </figure>
                                     <div class="bento-content">
                                         <h3>{route.name}</h3>
-                                        <span class="view-details">Ver detalles &rarr;</span>
+                                        <span class="view-details">
+                                            Ver detalles &rarr;
+                                        </span>
                                     </div>
                                 </a>
-                            )
-                    )
+                            ),
+                    ),
                 )
             }
         </section>

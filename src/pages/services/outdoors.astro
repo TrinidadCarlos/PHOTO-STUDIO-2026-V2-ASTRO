@@ -1,0 +1,100 @@
+---
+import DetailsServices from "@components/DetailsServices.astro";
+import type { Label } from "@components/TabsServices.astro";
+import TabsServices from "@components/TabsServices.astro";
+import {
+    getRouteDataService,
+    makeTabsServicesNames,
+} from "@helpers/infoRoutes";
+import LayoutServices from "@layouts/LayoutServices.astro";
+import { TabItem } from "free-astro-components";
+import "@styles/layout/layoutServices.css";
+
+import outdoorsImage from "@assets/img/services/outdoors-four.webp";
+
+let labels: Label[] = [];
+const subRoutes = getRouteDataService("/services", "outdoors");
+if (subRoutes) {
+    labels = makeTabsServicesNames(subRoutes || []);
+}
+---
+
+<LayoutServices
+    pageTitle="Sesión en exteriores"
+    heroImage={outdoorsImage}
+    bannerTitle=`"Los mejores escenarios para tu sesión de fotos."`
+    bannerSubtitle=`Aprovecha la luz y los paisajes para crear imágenes únicas y llena de vida.`
+>
+    <TabsServices labels={labels}>
+        <TabItem class={``}>
+            <section class="service-description-info">
+                <article>
+                    <h3>Retrato en exteriores</h3>
+                    <p>
+                        Sesión fotográfica en estudio para capturar <span
+                            >la esencia y personalidad</span
+                        >
+                        del sujeto, cuidando iluminación, fondo y composición.
+                    </p>
+                    <p>
+                        Ideal para retratos profesionales, portafolios, redes
+                        sociales o simplemente un recuerdo elegante y atemporal.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Imágenes profesionales y memorables</h3>
+                    <p>
+                        Nos enfocamos en expresiones, postura y detalles,
+                        logrando un resultado
+                        <span>profesional y con estilo</span>.
+                    </p>
+                    <p>
+                        Perfecto para quien busca <span
+                            >un retrato cuidado, artístico y duradero</span
+                        >.
+                    </p>
+                </article>
+            </section>
+
+            <DetailsServices
+                deliverableDetails={[
+                    {
+                        img: {
+                            alt: "Imagen ilustrativa de retrato en estudio",
+                            name: "album",
+                        },
+                        listDescription: [
+                            "Álbum fotográfico 30x30 cm con 40 páginas",
+                        ],
+                    },
+                    {
+                        img: {
+                            alt: "Imagen ilustrativa de fotografía enmarcada retrato",
+                            name: "photoFrame",
+                        },
+                        listDescription: ["1 fotografía enmarcada 30x40 cm"],
+                    },
+                    {
+                        img: {
+                            alt: "Imagen ilustrativa de USB con fotos",
+                            name: "usb",
+                        },
+                        listDescription: [
+                            "USB con fotografías digitales editadas",
+                        ],
+                    },
+                ]}
+                detailsInfo={[
+                    "Sesión fotográfica de retrato en estudio",
+                    "Duración aproximada de 60 minutos",
+                    "50 fotografías digitales en alta resolución entregadas en USB",
+                    "Edición profesional de color, luz y detalle",
+                    "Álbum físico 30x30 cm (40 páginas)",
+                    "1 fotografía enmarcada 30x40 cm",
+                    "Entrega digital y física de 2 a 3 semanas",
+                ]}
+            />
+        </TabItem>
+    </TabsServices>
+</LayoutServices>
